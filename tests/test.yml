@@ -1,0 +1,6 @@
+# test file for user
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - ansible-user
