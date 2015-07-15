@@ -17,7 +17,7 @@
     remove: "{{ item.remove | default(false) }}"
   when: item.uid is not defined
   with_items: user_users
-  tags: [configuration, user, user-users]
+  tags: [configuration, user, user-users, user-users-no-gid]
 
 # Remove when minimal Ansible version >= 1.8
 - name: add / delete users (with UID)
@@ -37,4 +37,4 @@
     remove: "{{ item.remove | default(false) }}"
   when: item.uid is defined
   with_items: user_users
-  tags: [configuration, user, user-users]
+  tags: [configuration, user, user-users, user-users-gid]
