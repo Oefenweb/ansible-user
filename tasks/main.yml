@@ -1,2 +1,4 @@
 # tasks file for user
 ---
+- include: groups.yml
+- include: users.yml
