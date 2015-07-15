@@ -1,0 +1,28 @@
+# tasks file for user
+---
+- name: add / delete groups
+  group:
+    name: "{{ item.name }}"
+    system: "{{ item.system | default(false) }}"
+    state: "{{ item.state | default('present') }}"
+  when: item.gid is not defined
+  with_items: user_groups
+  tags: [configuration, user, user-groups, user-groups-no-gid]
+
+# Remove when minimal Ansible version >= 1.8
+- name: add / delete groups (with GID)
+  group:
+    name: "{{ item.name }}"
+    system: "{{ item.system | default(false) }}"
+    gid: "{{ item.gid }}"
+    state: "{{ item.state | default('present') }}"
+  when: item.gid is defined
+  with_items: user_groups
+  tags: [configuration, user, user-groups, user-groups-gid]
+
+- name: add / delete groups (user)
+  group:
+    name: "{{ item.group | default(item.name) }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: user_users
+  tags: [configuration, user, user-groups, user-groups-primary]
