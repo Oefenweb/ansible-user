@@ -19,6 +19,7 @@
           - name: root
             # toor
             password: '$6$KEc76Ahbp8IoYP8$3mJqxxTkXFqEuGi0DJ48jeprVnmD4j2th4vRwa7TuhwnqacR8.gJyTAQCicqgLDeNmNWn6TtvmsEd8HL9QIMi.'
+            system: true
           - name: consectetur
             comment: Consecte tur
             # RlY9LX9cDWOCE
