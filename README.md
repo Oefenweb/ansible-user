@@ -20,13 +20,13 @@ None
 * `user_users.{n}.name`: [required]: The name of the user to manage
 * `user_users.{n}.uid`: [optional]: UID to set for the user
 * `user_users.{n}.comment`: [default: `''`]: Sets the description (aka `GECOS`) of user account
-* `user_users.{n}.group`: [default: ``]: Sets the user's primary group (takes a group name)
+* `user_users.{n}.group`: [default: `name`]: Sets the user's primary group (takes a group name)
 * `user_users.{n}.groups`: [default: `[]`]: Puts the user in this list of groups. When set to `[]`, the user is removed from all groups except the primary group
 * `user_users.{n}.append`: [default: `false`]: If `true`, will only add groups, not set them to just the list in groups
-* `user_users.{n}.password`: [default: ``]: Sets the user's password to this crypted value
+* `user_users.{n}.password`: [default: `*`]: Sets the user's password to this crypted value
 * `user_users.{n}.update_password`: [default: `always`]: `always` will update passwords if they differ. `on_create` will only set the password for newly created users
-* `user_users.{n}.shell`: [default: ``]: Sets the user's shell
-* `user_users.{n}.home`: [default: ``]: Sets the user's home directory
+* `user_users.{n}.shell`: [default: `/bin/bash`]: Sets the user's shell
+* `user_users.{n}.home`: [default: `/home/name` or `/name` for `root`]: Sets the user's home directory
 * `user_users.{n}.system`: [default: `false`]: If `true`, indicates that the user created is a system user
 * `user_users.{n}.state`: [default: `present`]: Whether the user should be present or not on the remote host
 * `user_users.{n}.remove`: [default: `false`]: When used with `state=absent`, behavior is as with `userdel --remove`
