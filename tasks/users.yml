@@ -10,6 +10,7 @@
     password: "{{ item.password | default('*') }}"
     update_password: "{{ item.update_password | default('always') }}"
     shell: "{{ item.shell | default('/bin/bash') }}"
+    # default('~' + item.name) also seems to work, but is not idempotent
     home: "{{ item.home | default(('/' if item.name == 'root' else '/home/') + item.name) }}"
     system: "{{ item.system | default(false) }}"
     state: "{{ item.state | default('present') }}"
