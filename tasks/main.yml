@@ -1,4 +1,21 @@
 # tasks file for user
 ---
-- include: groups.yml
+- include: groups-pre.yml
+  tags:
+    - configuration
+    - user
+    - user-groups
+    - user-groups-pre
+
 - include: users.yml
+  tags:
+    - configuration
+    - user
+    - user-users
+
+- include: groups-post.yml
+  tags:
+    - configuration
+    - user
+    - user-groups
+    - user-groups-post
