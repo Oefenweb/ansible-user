@@ -40,3 +40,13 @@
   with_items: user_users
   tags:
     - user-users-gid
+
+- name: users | permissions
+  file:
+    path: "{{ item.home | default(('/' if item.name == 'root' else '/home/') + item.name) }}"
+    mode: "{{ item.dir_mode }}"
+    state: directory
+  when: item.state | default('present') == 'present' and item.dir_mode is defined
+  with_items: user_users
+  tags:
+    - user-users-no-gid
