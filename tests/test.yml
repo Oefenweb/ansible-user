@@ -35,6 +35,7 @@
             groups:
               - lorem
               - ipsum
+            dir_mode: '0700'
           - name: quis
             shell: /bin/false
           - name: lacinia
@@ -42,3 +43,4 @@
           - name: leo
             state: absent
             remove: true
+            dir_mode: '0711'
