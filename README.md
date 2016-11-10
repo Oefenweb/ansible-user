@@ -1,6 +1,6 @@
 ## user
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-user.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-user) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-user-blue.svg)](https://galaxy.ansible.com/list#/roles/4391)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-user.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-user) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-user-blue.svg)](https://galaxy.ansible.com/tersmitten/user)
 
 Manages user and group accounts.
 

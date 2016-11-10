@@ -6,7 +6,7 @@
     system: "{{ item.system | default(false) }}"
     state: "{{ item.state | default('present') }}"
   when: item.gid is not defined
-  with_items: user_groups
+  with_items: "{{ user_groups }}"
   tags:
     - user-groups-no-gid
 
@@ -18,7 +18,7 @@
     gid: "{{ item.gid }}"
     state: "{{ item.state | default('present') }}"
   when: item.gid is defined
-  with_items: user_groups
+  with_items: "{{ user_groups }}"
   tags:
     - user-groups-gid
 
@@ -26,7 +26,7 @@
   group:
     name: "{{ item.group | default(item.name) }}"
     state: present
-  with_items: user_users
+  with_items: "{{ user_users }}"
   when: item.state is undefined or item.state == 'present'
   tags:
     - user-groups-primary

@@ -16,7 +16,7 @@
     state: "{{ item.state | default('present') }}"
     remove: "{{ item.remove | default(false) }}"
   when: item.uid is not defined
-  with_items: user_users
+  with_items: "{{ user_users }}"
   tags:
     - user-users-no-gid
 
@@ -37,7 +37,7 @@
     state: "{{ item.state | default('present') }}"
     remove: "{{ item.remove | default(false) }}"
   when: item.uid is defined
-  with_items: user_users
+  with_items: "{{ user_users }}"
   tags:
     - user-users-gid
 
@@ -47,6 +47,6 @@
     mode: "{{ item.dir_mode }}"
     state: directory
   when: item.state | default('present') == 'present' and item.dir_mode is defined
-  with_items: user_users
+  with_items: "{{ user_users }}"
   tags:
     - user-users-no-gid
