@@ -44,3 +44,7 @@
             state: absent
             remove: true
             dir_mode: '0711'
+          - name: lacus
+            uid: 6000
+          - name: mauris
+            system: true

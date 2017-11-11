@@ -3,28 +3,7 @@
 - name: users | add / delete
   user:
     name: "{{ item.name }}"
-    comment: "{{ item.comment | default('') }}"
-    group: "{{ item.group | default(item.name) }}"
-    groups: "{{ item.groups | default([]) | join(',') }}"
-    append: "{{ item.append | default(false) }}"
-    password: "{{ item.password | default('*') }}"
-    update_password: "{{ item.update_password | default('always') }}"
-    shell: "{{ item.shell | default('/bin/bash') }}"
-    # default('~' + item.name) also seems to work, but is not idempotent
-    home: "{{ item.home | default(('/' if item.name == 'root' else '/home/') + item.name) }}"
-    system: "{{ item.system | default(false) }}"
-    state: "{{ item.state | default('present') }}"
-    remove: "{{ item.remove | default(false) }}"
-  when: item.uid is not defined
-  with_items: "{{ user_users }}"
-  tags:
-    - user-users-no-gid
-
-# Remove when minimal Ansible version >= 1.8
-- name: users | add / delete (with UID)
-  user:
-    name: "{{ item.name }}"
-    uid: "{{ item.uid }}"
+    uid: "{{ item.uid | default(omit) }}"
     comment: "{{ item.comment | default('') }}"
     group: "{{ item.group | default(item.name) }}"
     groups: "{{ item.groups | default([]) | join(',') }}"
@@ -36,7 +15,6 @@
     system: "{{ item.system | default(false) }}"
     state: "{{ item.state | default('present') }}"
     remove: "{{ item.remove | default(false) }}"
-  when: item.uid is defined
   with_items: "{{ user_users }}"
   tags:
     - user-users-gid

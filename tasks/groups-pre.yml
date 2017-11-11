@@ -4,20 +4,8 @@
   group:
     name: "{{ item.name }}"
     system: "{{ item.system | default(false) }}"
+    gid: "{{ item.gid | default(omit) }}"
     state: "{{ item.state | default('present') }}"
-  when: item.gid is not defined
-  with_items: "{{ user_groups }}"
-  tags:
-    - user-groups-no-gid
-
-# Remove when minimal Ansible version >= 1.8
-- name: groups | add / delete (with GID)
-  group:
-    name: "{{ item.name }}"
-    system: "{{ item.system | default(false) }}"
-    gid: "{{ item.gid }}"
-    state: "{{ item.state | default('present') }}"
-  when: item.gid is defined
   with_items: "{{ user_groups }}"
   tags:
     - user-groups-gid
