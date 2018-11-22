@@ -1,6 +1,7 @@
 # meta file for user
 ---
 galaxy_info:
+  role_name: user
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Manages user and group accounts
@@ -12,10 +13,12 @@ galaxy_info:
         - precise
         - trusty
         - xenial
+        - bionic
     - name: Debian
       versions:
         - wheezy
         - jessie
+        - stretch
   galaxy_tags:
     - system
 dependencies: []
