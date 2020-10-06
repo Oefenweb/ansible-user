@@ -5,7 +5,9 @@
     name: "{{ item.group | default(item.name) }}"
     state: absent
   with_items: "{{ user_users }}"
-  when: item.state is defined and item.state == 'absent'
+  when:
+    - item.state is defined
+    - item.state == 'absent'
   tags:
     - user-groups-primary
     - user-groups-primary-remove

@@ -1,6 +1,7 @@
 ## user
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-user.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-user) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-user-blue.svg)](https://galaxy.ansible.com/Oefenweb/user)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-user.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-user)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-user-blue.svg)](https://galaxy.ansible.com/Oefenweb/user)
 
 Manages user and group accounts.
 
@@ -27,7 +28,7 @@ None
 * `user_users.{n}.update_password`: [default: `always`]: `always` will update passwords if they differ. `on_create` will only set the password for newly created users
 * `user_users.{n}.shell`: [default: `/bin/bash`]: Sets the user's shell
 * `user_users.{n}.home`: [default: `/home/name` or `/name` for `root`]: Sets the user's home directory
-* `user_users.{n}.dir_mode`: [optional]: The mode the home directory (e.g. `0755`, `0700`) 
+* `user_users.{n}.dir_mode`: [optional]: The mode the home directory (e.g. `0755`, `0700`)
 * `user_users.{n}.system`: [default: `false`]: If `true`, indicates that the user created is a system user
 * `user_users.{n}.state`: [default: `present`]: Whether the user should be present or not on the remote host
 * `user_users.{n}.remove`: [default: `false`]: When used with `state=absent`, behavior is as with `userdel --remove`
