@@ -16,6 +16,7 @@
     state: "{{ item.state | default('present') }}"
     remove: "{{ item.remove | default(false) }}"
   with_items: "{{ user_users }}"
+  no_log: true
   tags:
     - user-users-gid
 

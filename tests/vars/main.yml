@@ -1,0 +1,44 @@
+# vars file
+---
+user_groups:
+  - name: lorem
+  - name: ipsum
+    system: true
+  - name: dolor
+    gid: 5000
+  - name: sit
+    gid: 5001
+  - name: amet
+    state: absent
+user_users:
+  - name: root
+    # toor
+    password: '$6$KEc76Ahbp8IoYP8$3mJqxxTkXFqEuGi0DJ48jeprVnmD4j2th4vRwa7TuhwnqacR8.gJyTAQCicqgLDeNmNWn6TtvmsEd8HL9QIMi.'
+    system: true
+  - name: consectetur
+    comment: Consecte tur
+    # RlY9LX9cDWOCE
+    password: '$6$fEAh6bTPeOrw$ftGhu4tt.TA950BKAuTOOB5E4RymyN/wnDEuC45FOOlA/iyseKZtC0U8VaIhnDC1KsgpRzHkxZ/yje9zcrRXW1'
+  - name: adipiscing
+    comment: Adipis cing
+    # TbSEpe82RdWUw
+    password: '$6$6xtX0nhXEok$f6p7/OFRyn/r/hy7lWDMhgQF2EcYaLBlLI/QBFSXSgqoQfGD.I0rVU1CFRcjLNzT5rsVen7MC1W0WbEQPHPy0.'
+  - name: elit
+    state: absent
+  - name: quisque
+    groups:
+      - lorem
+      - ipsum
+    dir_mode: '0700'
+  - name: quis
+    shell: /bin/false
+  - name: lacinia
+    home: /var/tmp
+  - name: leo
+    state: absent
+    remove: true
+    dir_mode: '0711'
+  - name: lacus
+    uid: 6000
+  - name: mauris
+    system: true
