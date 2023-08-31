@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: groups | add / delete
-  group:
+  ansible.builtin.group:
     name: "{{ item.name }}"
     system: "{{ item.system | default(false) }}"
     gid: "{{ item.gid | default(omit) }}"
@@ -11,7 +11,7 @@
     - user-groups-gid
 
 - name: groups | add (user)
-  group:
+  ansible.builtin.group:
     name: "{{ item.group | default(item.name) }}"
     state: present
   with_items: "{{ user_users }}"

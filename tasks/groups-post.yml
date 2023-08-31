@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: groups | delete (user)
-  group:
+  ansible.builtin.group:
     name: "{{ item.group | default(item.name) }}"
     state: absent
   with_items: "{{ user_users }}"
