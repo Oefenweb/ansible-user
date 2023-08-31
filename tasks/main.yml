@@ -1,19 +1,22 @@
 # tasks file
 ---
-- include: groups-pre.yml
+- name: groups pre
+  ansible.builtin.import_tasks: groups-pre.yml
   tags:
     - configuration
     - user
     - user-groups
     - user-groups-pre
 
-- include: users.yml
+- name: users
+  ansible.builtin.import_tasks: users.yml
   tags:
     - configuration
     - user
     - user-users
 
-- include: groups-post.yml
+- name: groups post
+  ansible.builtin.import_tasks: groups-post.yml
   tags:
     - configuration
     - user
