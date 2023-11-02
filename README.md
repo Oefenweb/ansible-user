@@ -43,7 +43,7 @@ None
 ---
 - hosts: all
   roles:
-    - user
+    - oefenweb.user
 ```
 
 #### License
