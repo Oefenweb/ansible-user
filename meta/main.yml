@@ -1,9 +1,8 @@
 # meta file
 ---
 galaxy_info:
-  namespace: oefenweb
+  author: oefenweb
   role_name: user
-  author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Manages user and group accounts
   license: MIT
